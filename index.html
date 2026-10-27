@@ -3,80 +3,219 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snowtech Solution | Digital Services</title>
-<meta name="description" content="Snowtech Solution offers language pronunciation, content writing and SEO services.">
+<title>Snowtech Solution | Digital Services & SEO</title>
+<meta name="description" content="Snowtech Solution provides language pronunciation support, professional content writing and SEO services for businesses and individuals.">
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#172033;line-height:1.7}
-header{background:#10264a;color:white;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-header h2{margin:0;color:#5eead4}
-nav a{color:white;text-decoration:none;margin:8px}
-.hero{background:linear-gradient(135deg,#10264a,#176b87);color:white;text-align:center;padding:90px 20px}
-.hero h1{font-size:42px;line-height:1.2}
-.hero p{font-size:18px;max-width:650px;margin:20px auto}
-.btn{display:inline-block;background:#5eead4;color:#10264a;padding:12px 24px;border-radius:7px;text-decoration:none;font-weight:bold}
-section{padding:55px 8%;text-align:center}
-h2{color:#12345a}
-.services{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:25px}
-.card{flex:1 1 230px;max-width:330px;padding:25px;border-radius:12px;background:#f0f7fb;box-shadow:0 4px 15px #0000000c}
-.card h3{color:#087e8b}
-.contact{background:#f0f7fb}
-footer{background:#10264a;color:white;text-align:center;padding:22px}
-footer a{color:#5eead4}
+:root {
+  --navy: #102343;
+  --blue: #1765d1;
+  --teal: #38dbc1;
+  --light: #f5f8fc;
+  --text: #26364d;
+  --muted: #65738a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--text); line-height: 1.7; }
+a { text-decoration: none; }
+.container { width: min(1120px, 90%); margin: auto; }
+
+header { background: white; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #e8edf4; }
+.nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { color: var(--navy); font-size: 23px; font-weight: 800; }
+.logo span { color: #138d9c; }
+nav { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+nav a { color: var(--text); font-size: 14px; font-weight: 600; }
+nav a:hover { color: var(--blue); }
+
+.button { display: inline-block; background: var(--blue); color: white; padding: 13px 22px; border-radius: 8px; font-weight: 700; transition: .2s; }
+.button:hover { background: #104fa8; transform: translateY(-2px); }
+.button-light { background: white; color: var(--navy); }
+.button-light:hover { background: #eaf3ff; color: var(--navy); }
+
+.hero { background: radial-gradient(circle at 85% 20%, #254d80, transparent 36%), linear-gradient(135deg, #0d1d38, #153b65); color: white; padding: 100px 0 105px; overflow: hidden; }
+.hero-content { max-width: 780px; }
+.eyebrow { color: var(--teal); text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 800; }
+.hero h1 { font-size: clamp(38px, 6vw, 66px); line-height: 1.12; letter-spacing: -1.8px; margin: 20px 0; }
+.hero h1 span { color: var(--teal); }
+.hero p { color: #d7e4f6; font-size: 18px; max-width: 650px; margin-bottom: 30px; }
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+.trust { margin-top: 35px; color: #c3d5ec; font-size: 14px; }
+
+section { padding: 78px 0; }
+.section-head { max-width: 680px; margin: 0 auto 38px; text-align: center; }
+.section-head h2 { color: var(--navy); font-size: clamp(29px, 4vw, 40px); line-height: 1.2; margin: 10px 0; }
+.section-head p { color: var(--muted); }
+.label { color: #117d91; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.6px; }
+
+.services { background: var(--light); }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.card { background: white; border: 1px solid #e4eaf2; border-radius: 15px; padding: 28px; box-shadow: 0 8px 28px #142c4b08; transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 15px 32px #142c4b12; }
+.icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 12px; background: #e8f5ff; color: #155bb5; font-size: 25px; }
+.card h3 { color: var(--navy); margin: 20px 0 10px; font-size: 21px; }
+.card p { color: var(--muted); font-size: 15px; }
+.card a { color: var(--blue); font-weight: 700; font-size: 14px; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+.about h2 { color: var(--navy); font-size: clamp(30px, 4vw, 42px); line-height: 1.2; }
+.about p { color: var(--muted); }
+.features { list-style: none; padding: 0; }
+.features li { margin: 12px 0; font-weight: 600; }
+.features li::before { content: "✓"; color: #078d79; font-weight: 800; margin-right: 10px; }
+
+.process { background: var(--light); }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; text-align: center; }
+.step-number { margin: auto; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #dff8f3; color: #087f70; font-weight: 800; font-size: 20px; }
+.process h3 { color: var(--navy); }
+.process p { color: var(--muted); }
+
+.cta { padding: 0 0 78px; }
+.cta-box { background: linear-gradient(120deg, #12345c, #1765a1); color: white; padding: 48px 35px; border-radius: 18px; text-align: center; }
+.cta-box h2 { font-size: clamp(27px, 4vw, 38px); margin: 0 0 10px; }
+.cta-box p { color: #dbe9f7; margin-bottom: 24px; }
+.contact-buttons { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.whatsapp-button { background: #25D366; color: white; }
+.whatsapp-button:hover { background: #1eaf55; color: white; }
+
+footer { background: #0c1b32; color: #c3d0e2; padding: 35px 0; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+footer .logo { color: white; }
+footer p { font-size: 13px; margin: 5px 0; }
+footer a { color: var(--teal); }
+
+@media (max-width: 760px) {
+  .nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
+  nav { gap: 12px 18px; }
+  .hero { padding: 70px 0; }
+  .hero h1 { letter-spacing: -1px; }
+  .cards, .about-grid, .process-grid { grid-template-columns: 1fr; }
+  .about-grid { gap: 20px; }
+  section { padding: 58px 0; }
+  .cta { padding-bottom: 58px; }
+  .cta-box { padding: 35px 20px; }
+}
 </style>
 </head>
+
 <body>
 <header>
-<h2>Snowtech Solution</h2>
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div class="container nav">
+    <a class="logo" href="#home">Snowtech <span>Solution</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<div class="hero" id="home">
-<h1>Grow Your Business with Snowtech Solution</h1>
-<p>Professional language pronunciation, content writing and SEO services to help you communicate clearly and grow online.</p>
-<a class="btn" href="#contact">Contact Us</a>
-</div>
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="eyebrow">Professional Digital Services</div>
+      <h1>Build Your Online Presence. <span>Grow With Confidence.</span></h1>
+      <p>From clear communication to compelling content and smarter SEO, Snowtech Solution helps individuals and businesses strengthen their digital presence.</p>
+      <div class="hero-buttons">
+        <a class="button" href="#services">Explore Our Services →</a>
+        <a class="button button-light" href="#contact">Let's Talk</a>
+      </div>
+      <div class="trust">Language &amp; Pronunciation · Content Writing · SEO</div>
+    </div>
+  </section>
 
-<section id="services">
-<h2>Our Services</h2>
-<p>Practical digital services designed for your success.</p>
-<div class="services">
-<div class="card">
-<h3>Language & Pronunciation</h3>
-<p>Improve pronunciation, spoken communication and language confidence.</p>
-</div>
-<div class="card">
-<h3>Content Writing</h3>
-<p>Clear, engaging content for websites, blogs and businesses.</p>
-</div>
-<div class="card">
-<h3>SEO Services</h3>
-<p>Search engine optimization to improve your website visibility and online reach.</p>
-</div>
-</div>
-</section>
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">What We Do</div>
+        <h2>Services Designed for Your Growth</h2>
+        <p>Practical digital solutions to help you communicate better, publish quality content and improve your online visibility.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon" aria-hidden="true">◉</div>
+          <h3>Language &amp; Pronunciation</h3>
+          <p>Build confidence in spoken communication with pronunciation guidance and language practice tailored to your goals.</p>
+          <a href="#contact">Ask about this service →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">✎</div>
+          <h3>Content Writing</h3>
+          <p>Communicate your ideas through clear, engaging website copy, articles and business content that speaks to your audience.</p>
+          <a href="#contact">Ask about this service →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">↗</div>
+          <h3>SEO Services</h3>
+          <p>Improve your website structure, content and search visibility with search engine optimization suited to your business.</p>
+          <a href="#contact">Ask about this service →</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section id="about">
-<h2>About Snowtech Solution</h2>
-<p>We help individuals and businesses communicate effectively, create quality content and build a stronger online presence. Our goal is to provide reliable, professional digital services.</p>
-<p>Based in New York, United States.</p>
-</section>
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div>
+        <div class="label">About Snowtech Solution</div>
+        <h2>Helping Your Ideas Make a Bigger Impact</h2>
+      </div>
+      <div>
+        <p>Snowtech Solution provides digital services for individuals and businesses looking to communicate clearly and build a stronger online presence.</p>
+        <p>Our focus is on useful content, professional communication and practical approaches to digital growth.</p>
+        <ul class="features">
+          <li>Clear and professional communication</li>
+          <li>Content created around your goals</li>
+          <li>Practical website and SEO improvements</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section class="contact" id="contact">
-<h2>Let's Work Together</h2>
-<p>Have a project or question? Contact our team.</p>
-<p><strong>Email:</strong> <a href="mailto:info@snowtechsolution.com">info@snowtechsolution.com</a></p>
-<a class="btn" href="mailto:info@snowtechsolution.com">Email Us Today</a>
-</section>
+  <section class="process">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">How We Work</div>
+        <h2>A Simple Way to Get Started</h2>
+        <p>Start with your needs and work toward a solution that fits.</p>
+      </div>
+      <div class="process-grid">
+        <div><div class="step-number">1</div><h3>Tell Us Your Goals</h3><p>Explain your project, audience and what you want to achieve.</p></div>
+        <div><div class="step-number">2</div><h3>Discuss Your Needs</h3><p>We can discuss the service and scope that suit your project.</p></div>
+        <div><div class="step-number">3</div><h3>Get Started</h3><p>Agree on the next steps and begin working toward your goals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to Grow Your Online Presence?</h2>
+        <p>Tell us about your project. We'd be happy to hear from you.</p>
+        <a class="button button-light" href="mailto:info@snowtechsolution.com?subject=Snowtech%20Solution%20Service%20Inquiry">Email Our Team →</a>
+        <div class="contact-buttons">
+          <a class="button button-light" href="tel:+13322753346">📞 Call Us: +1 332-275-3346</a>
+          <a class="button whatsapp-button" href="https://wa.me/13322753346" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+        </div>
+        <p style="margin-top:18px;margin-bottom:0">
+          <a style="color:#ffffff" href="mailto:info@snowtechsolution.com">info@snowtechsolution.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-<p>&copy; 2026 Snowtech Solution. All rights reserved.</p>
-<p>Professional Digital Services</p>
+  <div class="container footer-row">
+    <div>
+      <a class="logo" href="#home">Snowtech <span>Solution</span></a>
+      <p>Professional digital services for your next step.</p>
+      <p>Phone: <a href="tel:+13322753346">+1 332-275-3346</a></p>
+    </div>
+    <p>Based in New York, United States<br>© 2026 Snowtech Solution. All rights reserved.</p>
+  </div>
 </footer>
 </body>
 </html>
